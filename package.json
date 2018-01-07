@@ -3,12 +3,6 @@
   "version": "0.0.1",
   "description": "Node.js sample app for OpenShift 3",
   "main": "server.js",
-  "private": true,
-  "devDependencies": {
-    "enzyme": "^2.8.2",
-    "react-addons-test-utils": "^15.5.1",
-    "react-scripts": "^1.0.2"
-  },
   "dependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
@@ -17,15 +11,7 @@
     "mocha": "^2.4.5",
     "mongodb": "^2.1.16",
     "morgan": "^1.7.0",
-    "object-assign": "4.1.0",
-    "classnames": "^2.2.5",
-    "prop-types": "^15.5.10",
-    "react": "^15.5.0",
-    "react-dom": "^15.5.0",
-    "react-redux": "^5.0.5",
-    "react-test-renderer": "^15.5.4",
-    "redux": "^3.5.2",
-    "todomvc-app-css": "^2.1.0"
+    "object-assign": "4.1.0"
   },
   "engine": {
     "node": "*",
@@ -33,20 +19,16 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "IP=0.0.0.0 PORT=3030 mocha --timeout 5000 tests/*_test.js",
-    "startR": "react-scripts start",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "testR": "react-scripts test"
+    "test": "IP=0.0.0.0 PORT=3030 mocha --timeout 5000 tests/*_test.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Iluminat777/reacr_redux_test_R.git"
+    "url": "http://github.com/openshift/nodejs-ex.git"
   },
-  "author": "Igor T",
-  "license": "",
+  "author": "Steve Speicher <sspeiche@gmail.com>",
+  "license": "CC-BY-1.0",
   "bugs": {
-    "url": ""
+    "url": "http://github.com/openshift/nodejs-ex/issues"
   },
-  "homepage": "https://github.com/Iluminat777/reacr_redux_test_R"
+  "homepage": "http://github.com/openshift/nodejs-ex"
 }
