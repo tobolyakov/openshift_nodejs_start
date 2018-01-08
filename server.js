@@ -70,10 +70,10 @@ app.get('/', function (req, res) {
       if (err) {
         console.log('Error running count. Message:\n'+err);
       }
-      res.render('/*', { pageCountMessage : count, dbInfo: dbDetails });
+      res.render('/', { pageCountMessage : count, dbInfo: dbDetails });
     });
   } else {
-    res.render('/*', { pageCountMessage : null});
+    res.render('/', { pageCountMessage : null});
   }
 });
 
