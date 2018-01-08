@@ -1,34 +1,34 @@
 {
-  "name": "example-create-react-app-express",
-  "version": "1.0.0",
-  "description": "Example on using create-react-app with a Node Express Backend",
-  "author": {
-    "name": "Esau Silva",
-    "email": "esausilva85@gmail.com",
-    "url": "https://esausilva.com"
-  },
-  "license": "MIT",
-  "scripts": {
-    "client": "cd client && yarn start",
-    "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
-  },
+  "name": "nodejs-ex",
+  "version": "0.0.1",
+  "description": "Node.js sample app for OpenShift 3",
+  "main": "server.js",
   "dependencies": {
-    "express": "^4.16.2"
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "mocha": "^2.4.5",
+    "mongodb": "^2.1.16",
+    "morgan": "^1.7.0",
+    "object-assign": "4.1.0"
   },
-  "devDependencies": {
-    "concurrently": "^3.5.0"
+  "engine": {
+    "node": "*",
+    "npm": "*"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "IP=0.0.0.0 PORT=3030 mocha --timeout 5000 tests/*_test.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/esausilva/example-create-react-app-express.git"
+    "url": "http://github.com/openshift/nodejs-ex.git"
   },
+  "author": "Steve Speicher <sspeiche@gmail.com>",
+  "license": "CC-BY-1.0",
   "bugs": {
-    "url": "https://github.com/esausilva/example-create-react-app-express/issues"
+    "url": "http://github.com/openshift/nodejs-ex/issues"
   },
-  "keywords": [
-    "node",
-    "express",
-    "create-react-app"
-  ]
+  "homepage": "http://github.com/openshift/nodejs-ex"
 }
