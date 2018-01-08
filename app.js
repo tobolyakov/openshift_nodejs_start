@@ -1,15 +1,42 @@
+var express = require(`express`);
+var morgan = require(`morgan`);
 
-/**
- * Module dependencies.
- */
 
-var express = require('express');
+// // Comment out during production
+// var webpack = require('webpack');
+// var WebpackDevServer = require('webpack-dev-server');
+// var config = require('./webpack.dev');
+// new WebpackDevServer(webpack(config), {
+//   publicPath: config.output.publicPath,
+//   hot: true,
+//   historyApiFallback: true
+// }).listen(3001, 'localhost', function (err, result) {
+//   if (err) {
+//     return console.log(err);
+//   }
+//
+//   console.log('Listening at http://localhost:3001/');
+// });
 
+
+// Init express
 var app = express();
 
-app.use(express.basicAuth('tobi', 'ferret'));
-app.use(express.logger('dev'));
-app.use(express.static(__dirname + '/views'));
+app.set(`port`, process.env.NODE_PORT || 3000);
+app.set(`ip`, process.env.NODE_IP || `localhost`);
 
-app.listen(3000);
-console.log('Component server listening in port 3000');
+app.set(`views`, `./views`);
+app.set(`view engine`, `html`);
+
+app.use(morgan(`dev`));
+app.use(express.static(`./public`));
+
+app.get(`/`, function(req, res){
+    res.render(`index`);
+});
+
+app.listen(app.get(`port`), app.get(`ip`), function(){
+    console.log('Application ip ' + app.get(`ip`) + ':' + app.get(`port`));
+    console.log('worker ' + process.pid + 'started...');
+});
+© 2018 GitHub, Inc.
