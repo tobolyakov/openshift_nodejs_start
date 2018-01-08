@@ -70,10 +70,10 @@ app.get('/', function (req, res) {
       if (err) {
         console.log('Error running count. Message:\n'+err);
       }
-      res.render('index.html','css/','dist/','image','static/', { pageCountMessage : count, dbInfo: dbDetails });
+      res.render('index.html','static/js/main.69d87e14.js','static/css/main.d39d5fe9.css', { pageCountMessage : count, dbInfo: dbDetails });
     });
   } else {
-    res.render('index.html','css/','dist/','image','static/', { pageCountMessage : null});
+    res.render('index.html','static/js/main.69d87e14.js','static/css/main.d39d5fe9.css', { pageCountMessage : null});
   }
 });
 
