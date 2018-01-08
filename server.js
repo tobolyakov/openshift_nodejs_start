@@ -5,7 +5,7 @@ var express = require('express'),
     
 Object.assign=require('object-assign')
 
-app.engine('html', require('ejs').renderFile);
+app.engine('css', require('ejs').renderFile);
 app.use(morgan('combined'))
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
@@ -70,10 +70,10 @@ app.get('/', function (req, res) {
       if (err) {
         console.log('Error running count. Message:\n'+err);
       }
-      res.render('main.d39d5fe9.css', { pageCountMessage : count, dbInfo: dbDetails });
+      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails });
     });
   } else {
-    res.render('main.d39d5fe9.css', { pageCountMessage : null});
+    res.render('index.html', { pageCountMessage : null});
   }
 });
 
