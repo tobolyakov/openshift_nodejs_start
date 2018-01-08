@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: reactjs-openshift
+spec:
+  ports:
+  - name: http
+    port: 8081
+    targetPort: 8081
+  selector:
+    app: reactjs-openshift
+    deploymentconfig: reactjs-openshift

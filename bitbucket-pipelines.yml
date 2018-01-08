@@ -1,0 +1,21 @@
+image: jhidalgo3/openshift-node-docker:7-alpine
+clone:          # the 'clone' section
+  depth: 1
+
+options:
+  docker: true
+
+pipelines:
+  default:
+    - step:
+        script:
+          - yarn install
+          - yarn build
+          - export IMAGE_NAME=$DOCKER_HUB_USERNAME/react-openshift:$BITBUCKET_COMMIT
+          - docker build -t $IMAGE_NAME .
+          - docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD
+          - docker push $IMAGE_NAME
+          - oc login $OPENSHIFT_HOST --insecure-skip-tls-verify=true --username=$OPENSHIFT_USER --password=$OPENSHIFT_PASSWORD -n OPENSHIFT_NAMESPACE
+          - sed -i.bak "s#\$DOCKER_IMAGE#$IMAGE_NAME#g" openshift/dc.yml
+          - sed -i.bak "s#\$ROUTE_HOST#$ROUTE_HOST#g" openshift/route.yml
+          - oc apply -f openshift -n demo
