@@ -56,7 +56,7 @@ var initDb = function(callback) {
     });
 };
 
-app.set(`views`, `./views`);
+app.set(`views`, `./app/build`);
 app.set(`view engine`, `html`);
 
 app.use(morgan(`dev`));
