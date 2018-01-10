@@ -56,11 +56,11 @@ var initDb = function(callback) {
     });
 };
 
-app.set(`views`, `./app/build`);
+app.set(`views`, `./views`);
 app.set(`view engine`, `html`);
 
 app.use(morgan(`dev`));
-app.use(express.static(`./app/build`));
+app.use(express.static(`./views`));
 
 app.get(`/`, function(req, res){
     res.render(`index.html`);
