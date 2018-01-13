@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-ex",
+  "name": "nodejs-ex-react",
   "version": "0.0.1",
   "description": "Node.js sample app for OpenShift 3",
   "main": "server.js",
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/openshift/nodejs-ex.git"
+    "url": "https://github.com/Iluminat777/openshift_nodejs_start.gitt"
   },
-  "author": "Steve Speicher <sspeiche@gmail.com>",
-  "license": "CC-BY-1.0",
+  "author": "Igor",
+  "license": "MIT",
   "bugs": {
-    "url": "http://github.com/openshift/nodejs-ex/issues"
+    "url": ""
   },
-  "homepage": "http://github.com/openshift/nodejs-ex"
+  "homepage": "https://github.com/Iluminat777/openshift_nodejs_start"
 }
